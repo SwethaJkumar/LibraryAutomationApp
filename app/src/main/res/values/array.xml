@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="homepage">
+        <item>Opening the door to knowledge </item>
+        <item>Read, learn, discover.</item>
+        <item>Check it out!</item>
+    </string-array>
+</resources>

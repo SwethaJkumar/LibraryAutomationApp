@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "537648994348",
+    "project_id": "library-ceb7a",
+    "storage_bucket": "library-ceb7a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537648994348:android:0578157d4d95314ce81989",
+        "android_client_info": {
+          "package_name": "com.example.library_automation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "537648994348-rt9cihcm937a0uhogeq30c96kps8g62t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgHdDDDd4sF-EK0BReuwp0K7ASOVxu2qs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "537648994348-rt9cihcm937a0uhogeq30c96kps8g62t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

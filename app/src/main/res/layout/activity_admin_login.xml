@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/gradient_background"
+    tools:context=".Admin_login">
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/login"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Admin Portal"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="#ffffff"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="#ffffff"/>
+
+    <EditText
+        android:id="@+id/user"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/custombutton"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:paddingLeft="20dp"
+        android:drawablePadding="10dp"
+        android:hint="Username" />
+
+    <EditText
+        android:id="@+id/pass"
+        android:layout_marginTop="15dp"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:hint="Password"
+        android:drawableLeft="@drawable/ic_baseline_lock_24"
+        android:paddingLeft="20dp"
+        android:drawablePadding="10dp"
+        android:background="@drawable/custombutton"/>
+    <EditText
+        android:id="@+id/pin"
+        android:layout_marginTop="15dp"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:hint="Security Pin"
+        android:drawableLeft="@drawable/ic_baseline_security_24"
+        android:paddingLeft="20dp"
+        android:drawablePadding="10dp"
+        android:background="@drawable/custombutton"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Keep me Signed in "
+        android:textColor="#FFFBF6"
+        android:hint="#FFFBF6"
+        android:layout_marginTop="15dp"
+        android:buttonTint="#FFFBF6" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/loginbutton"
+        app:backgroundTint="#692C73"
+        android:drawableLeft="@drawable/ic_baseline_login_24"
+        android:paddingLeft="10dp"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textColor="#FFFBF6" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forget Password"
+        android:textSize="18dp"
+        android:clickable="true"
+        android:layout_marginTop="15dp"
+        android:textColor="#BA5DCA" />
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+</LinearLayout>

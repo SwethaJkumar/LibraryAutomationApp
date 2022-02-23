@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:backgroundTint="#800B0B0B"
+    android:backgroundTintMode="src_over"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/wel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="E-Library"
+        android:textColor="@color/white"
+        android:textSize="60sp" />
+
+    <com.tomer.fadingtextview.FadingTextView
+        android:id="@+id/fadehome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_below="@id/wel"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="100dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:texts="@array/homepage"
+        app:timeout="2000"
+        tools:ignore="MissingClass" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/fadehome"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/hbutton"
+        android:layout_centerHorizontal="true"
+        android:text="Login"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:backgroundTint="@color/colorAccent" />
+
+</RelativeLayout>

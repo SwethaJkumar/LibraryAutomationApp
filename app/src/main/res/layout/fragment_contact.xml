@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/contact" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bug Report"
+            android:gravity="center"
+            android:textSize="40sp"
+            android:textColor="#ffffff"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Name:"
+            android:layout_gravity="left"
+            android:layout_marginStart="80dp"
+            android:textColor="#ffffff"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="250dp"
+            android:layout_height="48dp"
+            android:background="@drawable/custombutton"
+            android:paddingLeft="20dp"
+            android:drawablePadding="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Email:"
+            android:layout_gravity="left"
+            android:layout_marginStart="80dp"
+            android:textColor="#ffffff"
+            android:textSize="12sp" />
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="250dp"
+            android:layout_height="48dp"
+            android:paddingLeft="20dp"
+            android:drawablePadding="10dp"
+            android:background="@drawable/custombutton"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Subject:"
+            android:layout_gravity="left"
+            android:layout_marginStart="80dp"
+            android:textColor="#ffffff"
+            android:textSize="12sp" />
+        <EditText
+            android:id="@+id/sub"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:background="@drawable/custombutton"
+            android:paddingLeft="20dp"
+            android:drawablePadding="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Message:"
+            android:layout_gravity="left"
+            android:layout_marginStart="80dp"
+            android:textColor="#ffffff"
+            android:textSize="12sp" />
+        <EditText
+            android:id="@+id/msg"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:background="@drawable/custombutton"
+            android:paddingLeft="20dp"
+            android:drawablePadding="10dp"/>
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/loginbutton"
+            android:drawableLeft="@drawable/ic_baseline_send_24"
+            android:paddingLeft="10dp"
+            android:text="Send"
+            android:textAllCaps="false"
+            android:textColor="#FFFBF6" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#3fff"
+            android:layout_marginTop="15dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="XYZ, Tamil Nadu, India"
+            android:textSize="12sp"
+            android:layout_marginTop="15dp"
+            android:textColor="#FFFBF6"
+            android:clickable="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_baseline_phone_24"
+            android:drawablePadding="10dp"
+            android:text="+91 12345 67890"
+            android:layout_gravity="center"
+            android:textColor="#ffffff"
+            android:clickable="true"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_baseline_email_24"
+            android:drawablePadding="10dp"
+            android:text="contact@e_library.com"
+            android:layout_gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>
