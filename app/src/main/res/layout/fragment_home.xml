@@ -2,12 +2,12 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
     android:orientation="vertical">
     <TextView
         android:id="@+id/t1"
@@ -18,13 +18,23 @@
         android:gravity="center"
         android:textStyle="bold"
         android:paddingBottom="20dp"
-        android:textSize="50sp" />
+        android:textSize="40sp" />
+    <SearchView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:label="@string/app_name"
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:voiceSearchMode="showVoiceSearchButton|launchRecognizer"
+        />
     <LinearLayout
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center_horizontal">
-    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    <com.google.android.material.card.MaterialCardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:cardView="http://schemas.android.com/apk/res-auto"
         android:id="@+id/cardView1"
@@ -33,22 +43,18 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:translationZ="5dp"
-        android:focusableInTouchMode="true"
         cardView:cardCornerRadius="8dp"
-        cardView:cardElevation="15dp"
+        cardView:cardElevation="8dp"
         android:layout_margin="8dp"
-        android:focusable="true"
-        android:checkable="true"
         android:foreground="?android:attr/selectableItemBackground"
-        android:background="#461f40"
+        android:background="@drawable/card_background"
         android:clickable="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background= "#461f40"
+            android:background="#461f40"
             android:layout_gravity="center_horizontal"
             tools:context=".ui.home.HomeFragment">
 
@@ -84,11 +90,9 @@
         android:layout_marginLeft="20dp"
         cardView:cardCornerRadius="8dp"
         cardView:cardElevation="8dp"
-        android:translationZ="5dp"
-        android:focusableInTouchMode="true"
-        android:background="@drawable/card_background"
         android:layout_margin="8dp"
         android:foreground="?android:attr/selectableItemBackground"
+        android:background="@drawable/card_background"
         android:clickable="true">
 
             <LinearLayout
@@ -309,58 +313,6 @@
                     android:textSize="15sp"/>
             </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginLeft="25dp"
-                android:clickable="true"
-                android:src="@drawable/twitter">
-            </ImageView>
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="25dp"
-                android:clickable="true"
-                android:src="@drawable/reddit">
-            </ImageView>
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="25dp"
-                android:clickable="true"
-                android:src="@drawable/medium">
-            </ImageView>
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="25dp"
-                android:clickable="true"
-                android:src="@drawable/discord">
-            </ImageView>
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="25dp"
-                android:clickable="true"
-                android:src="@drawable/instagram">
-            </ImageView>
-        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
 </ScrollView>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation_admin"
+    app:startDestination="@+id/nav_adminhome">
+
+    <activity
+        android:id="@+id/nav_adminhome"
+        android:name="com.example.library_automation.Adminhome"
+        android:label="@string/menu_home"
+        tools:layout="@layout/activity_adminhome" />
+    <activity
+        android:id="@+id/nav_adduser"
+        android:name="com.example.library_automation.Adduser"
+        android:label="Add User"
+        tools:layout="@layout/activity_adduser" />
+    <activity
+        android:id="@+id/nav_deleteuser"
+        android:name="com.example.library_automation.Deleteuser"
+        android:label="Delete User"
+        tools:layout="@layout/activity_deleteuser" />
+    <activity
+        android:id="@+id/nav_readuser"
+        android:name="com.example.library_automation.Readuser"
+        android:label="Read User"
+        tools:layout="@layout/activity_readuser" />
+
+</navigation>

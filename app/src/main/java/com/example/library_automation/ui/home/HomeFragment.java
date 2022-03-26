@@ -1,5 +1,6 @@
 package com.example.library_automation.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextPaint;
 import android.view.LayoutInflater;
@@ -9,15 +10,18 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.library_automation.Payment;
 import com.example.library_automation.R;
 import com.example.library_automation.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
  TextView t;
+ CardView c1,c2,c3,c4,c5,c6;
     private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
 
@@ -32,6 +36,14 @@ public class HomeFragment extends Fragment {
         t.setText("E-Library");
 
         TextPaint paint = t.getPaint();
+        c3=(CardView) root.findViewById(R.id.cardView3);
+        c3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Payment.class);
+                startActivity(intent);
+            }
+        });
        /* float width = paint.measureText("E-Library");
         double angleInRadians = Math.toRadians(45);
         double length = t.getPaint().getTextSize();

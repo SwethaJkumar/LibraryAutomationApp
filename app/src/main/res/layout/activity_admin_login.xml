@@ -47,6 +47,7 @@
         android:drawableLeft="@drawable/ic_baseline_lock_24"
         android:paddingLeft="20dp"
         android:drawablePadding="10dp"
+        android:inputType="textPassword"
         android:background="@drawable/custombutton"/>
     <EditText
         android:id="@+id/pin"
@@ -57,18 +58,19 @@
         android:drawableLeft="@drawable/ic_baseline_security_24"
         android:paddingLeft="20dp"
         android:drawablePadding="10dp"
+        android:inputType="textPassword"
         android:background="@drawable/custombutton"/>
-    <CheckBox
+    <!--<CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Keep me Signed in "
         android:textColor="#FFFBF6"
         android:hint="#FFFBF6"
         android:layout_marginTop="15dp"
-        android:buttonTint="#FFFBF6" />
+        android:buttonTint="#FFFBF6" />-->
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/alogin"
         android:layout_width="100dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
@@ -79,14 +81,14 @@
         android:text="Login"
         android:textAllCaps="false"
         android:textColor="#FFFBF6" />
-    <TextView
+    <!--<TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Forget Password"
         android:textSize="18dp"
         android:clickable="true"
         android:layout_marginTop="15dp"
-        android:textColor="#BA5DCA" />
+        android:textColor="#BA5DCA" />-->
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"

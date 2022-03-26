@@ -22,6 +22,8 @@
 
         <EditText
             android:id="@+id/user"
+            android:inputType="text"
+            android:ems="4"
             android:layout_width="250dp"
             android:layout_height="48dp"
             android:layout_marginTop="15dp"
@@ -29,7 +31,7 @@
             android:drawableLeft="@drawable/ic_baseline_person_24"
             android:paddingLeft="20dp"
             android:drawablePadding="10dp"
-            android:hint="Username" />
+            android:hint="Email" />
 
         <EditText
             android:id="@+id/pass"
@@ -40,15 +42,16 @@
             android:drawableLeft="@drawable/ic_baseline_lock_24"
             android:paddingLeft="20dp"
             android:drawablePadding="10dp"
+            android:inputType="textPassword"
             android:background="@drawable/custombutton"/>
-        <CheckBox
+        <!--<CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Keep me Signed in "
             android:textColor="#FFFBF6"
             android:hint="#FFFBF6"
             android:layout_marginTop="15dp"
-            android:buttonTint="#FFFBF6" />
+            android:buttonTint="#FFFBF6" />-->
 
         <Button
             android:id="@+id/login"
@@ -63,6 +66,7 @@
             android:textAllCaps="false"
             android:textColor="#FFFBF6" />
         <TextView
+            android:id="@+id/forgetpass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Forget Password"

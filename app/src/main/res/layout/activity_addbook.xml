@@ -12,16 +12,16 @@
         android:orientation="vertical"
         android:padding="5dp">
 
-        <ImageView
+        <!--<ImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/user" />
+            android:src="@drawable/user" />-->
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="User Details"
+            android:text="Book Details"
             android:textColor="#ffffff"
             android:textSize="40sp" />
 
@@ -31,12 +31,12 @@
             android:layout_gravity="left"
             android:layout_marginStart="80dp"
             android:layout_marginTop="10dp"
-            android:text="Roll no :"
+            android:text="Book id :"
             android:textColor="#ffffff"
             android:textSize="12sp" />
 
         <EditText
-            android:id="@+id/rno1"
+            android:id="@+id/bookid"
             android:layout_width="250dp"
             android:layout_height="48dp"
             android:background="@drawable/custombutton"
@@ -49,12 +49,12 @@
             android:layout_gravity="left"
             android:layout_marginStart="80dp"
             android:layout_marginTop="10dp"
-            android:text="First Name :"
+            android:text="Book Name :"
             android:textColor="#ffffff"
             android:textSize="12sp" />
 
         <EditText
-            android:id="@+id/name1"
+            android:id="@+id/bookname"
             android:layout_width="250dp"
             android:layout_height="48dp"
             android:background="@drawable/custombutton"
@@ -66,12 +66,12 @@
             android:layout_gravity="left"
             android:layout_marginStart="80dp"
             android:layout_marginTop="10dp"
-            android:text="Last Name :"
+            android:text="Author :"
             android:textColor="#ffffff"
             android:textSize="12sp" />
 
         <EditText
-            android:id="@+id/lname1"
+            android:id="@+id/author"
             android:layout_width="250dp"
             android:layout_height="48dp"
             android:background="@drawable/custombutton"
@@ -84,12 +84,12 @@
             android:layout_gravity="left"
             android:layout_marginStart="80dp"
             android:layout_marginTop="10dp"
-            android:text="Password :"
+            android:text="isbn :"
             android:textColor="#ffffff"
             android:textSize="12sp" />
 
         <EditText
-            android:id="@+id/pass1"
+            android:id="@+id/isbn"
             android:layout_width="250dp"
             android:layout_height="48dp"
             android:background="@drawable/custombutton"
@@ -101,12 +101,12 @@
             android:layout_gravity="left"
             android:layout_marginStart="80dp"
             android:layout_marginTop="10dp"
-            android:text="Email :"
+            android:text="Number of copies :"
             android:textColor="#ffffff"
             android:textSize="12sp" />
 
         <EditText
-            android:id="@+id/email1"
+            android:id="@+id/numcopy"
             android:layout_width="250dp"
             android:layout_height="48dp"
             android:background="@drawable/custombutton"
@@ -118,63 +118,47 @@
             android:layout_gravity="left"
             android:layout_marginStart="80dp"
             android:layout_marginTop="10dp"
-            android:text="Course :"
+            android:text="Genre :"
             android:textColor="#ffffff"
             android:textSize="12sp" />
 
         <EditText
-            android:id="@+id/Course1"
+            android:id="@+id/genre"
+            android:layout_width="250dp"
+            android:layout_height="48dp"
+            android:background="@drawable/custombutton"
+            android:drawablePadding="10dp"
+            android:paddingLeft="20dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="10dp"
+            android:text="Location :"
+            android:textColor="#ffffff"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/location"
             android:layout_width="250dp"
             android:layout_height="45dp"
             android:background="@drawable/custombutton"
             android:drawablePadding="10dp"
             android:paddingLeft="20dp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginStart="80dp"
             android:layout_marginTop="10dp"
-            android:text="Department :"
+            android:text="Publication :"
             android:textColor="#ffffff"
             android:textSize="12sp" />
 
         <EditText
-            android:id="@+id/dept1"
-            android:layout_width="250dp"
-            android:layout_height="45dp"
-            android:background="@drawable/custombutton"
-            android:drawablePadding="10dp"
-            android:paddingLeft="20dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="10dp"
-            android:text="Year :"
-            android:textColor="#ffffff"
-            android:textSize="12sp" />
-
-        <EditText
-            android:id="@+id/year1"
-            android:layout_width="250dp"
-            android:layout_height="45dp"
-            android:background="@drawable/custombutton"
-            android:drawablePadding="10dp"
-            android:paddingLeft="20dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="10dp"
-            android:text="Contact no :"
-            android:textColor="#ffffff"
-            android:textSize="12sp" />
-
-        <EditText
-            android:id="@+id/Contact1"
+            android:id="@+id/publ"
             android:layout_width="250dp"
             android:layout_height="45dp"
             android:background="@drawable/custombutton"
@@ -182,7 +166,7 @@
             android:paddingLeft="20dp" />
 
         <Button
-            android:id="@+id/adduser"
+            android:id="@+id/addbook"
             android:layout_width="100dp"
             android:layout_height="45dp"
             android:layout_marginTop="20dp"
@@ -193,6 +177,5 @@
             android:textAllCaps="false"
             android:textColor="#FFFBF6" />
 
-
     </LinearLayout>
-    </ScrollView>
+</ScrollView>

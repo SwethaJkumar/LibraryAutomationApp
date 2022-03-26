@@ -12,6 +12,56 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Library_Automation">
         <activity
+            android:name=".Guesthome"
+            android:exported="false" />
+        <activity
+            android:name=".Readbook"
+            android:exported="false" />
+        <activity
+            android:name=".Deletebook"
+            android:exported="false" />
+        <activity
+            android:name=".Addbook"
+            android:exported="false" />
+        <activity
+            android:name=".Adminhome"
+            android:exported="false" />
+        <activity
+            android:name=".Payment"
+            android:exported="false" />
+        <activity
+            android:name=".Readuser"
+            android:exported="false" />
+        <activity
+            android:name=".Deleteuser"
+            android:exported="false" />
+        <activity
+            android:name=".adminmenu"
+            android:exported="false" />
+        <activity
+            android:name=".AdminActivity"
+            android:exported="false"
+            android:label="@string/title_activity_admin"
+            android:theme="@style/Theme.Library_Automation.NoActionBar" />
+        <activity
+            android:name=".AdminMenuActivity"
+            android:exported="false"
+            android:label="@string/title_activity_admin_menu"
+            android:theme="@style/Theme.Library_Automation.NoActionBar" />
+        <activity
+            android:name=".AdminMenu"
+            android:exported="false"
+            android:label="@string/title_activity_admin_menu"
+            android:theme="@style/Theme.Library_Automation.NoActionBar" />
+        <activity
+            android:name=".admin_menu"
+            android:exported="false"
+            android:label="@string/title_activity_admin_menu"
+            android:theme="@style/Theme.Library_Automation.NoActionBar" />
+        <activity
+            android:name=".profile"
+            android:exported="false" />
+        <activity
             android:name=".Admin_login"
             android:exported="false" />
         <activity
@@ -21,11 +71,6 @@
         <activity
             android:name=".Adduser"
             android:exported="false" />
-        <activity
-            android:name=".MainActivity2"
-            android:exported="false"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.Library_Automation.NoActionBar" />
         <activity
             android:name=".login"
             android:exported="false" />
