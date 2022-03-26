@@ -4,13 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
     tools:context=".Payment">
+
     <TextView
+        android:id="@+id/pm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="40dp"
         android:text="Select Payment Mode"
-        android:id="@+id/pm"
-        android:textSize="40dp"/>
+        android:layout_marginStart="25dp"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
 
     <RadioGroup
         android:layout_width="wrap_content"
@@ -25,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:background="@color/colorAccent"
-            android:backgroundTint="@color/teal_200"
+            android:backgroundTint="#C6A7CC"
             android:text="ID card"/>
 
         <RadioButton
@@ -35,7 +40,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp"
             android:background="@color/colorAccent"
-            android:backgroundTint="@color/teal_200"
+            android:backgroundTint="#C6A7CC"
             android:text="Credit/Debit Card"/>
 
         <RadioButton
@@ -45,17 +50,18 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp"
             android:background="@color/colorAccent"
-            android:backgroundTint="@color/teal_200"
+            android:backgroundTint="#C6A7CC"
             android:text="UPIs"/>
     </RadioGroup>
 
     <Button
+        android:id="@+id/proceed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rg"
-        android:id="@+id/proceed"
+        android:layout_marginLeft="120dp"
+        android:backgroundTint="@color/purple_200"
         android:layout_marginTop="50dp"
-        android:text="PROCEED TO PAY"
-        android:layout_marginLeft="120dp"/>
+        android:text="PROCEED TO PAY" />
 
 </RelativeLayout>
