@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Library_Automation">
         <activity
+            android:name=".BookBorrow"
+            android:exported="false" />
+        <activity
             android:name=".Guesthome"
             android:exported="false" />
         <activity

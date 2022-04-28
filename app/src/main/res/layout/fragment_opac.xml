@@ -1,8 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/gradient_background">
+    android:background="@drawable/gradient_background"
+    tools:context=".AdduserFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/user" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Add User"
+            android:textColor="#00224f"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="10dp"
+            android:text="Roll no:"
+            android:textColor="#00224f"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/rno"
+            android:layout_width="250dp"
+            android:layout_height="48dp"
+            android:background="@drawable/custombutton"
+            android:drawablePadding="10dp"
+            android:paddingLeft="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="10dp"
+            android:text="Name:"
+            android:textColor="#00224f"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="250dp"
+            android:layout_height="48dp"
+            android:background="@drawable/custombutton"
+            android:drawablePadding="10dp"
+            android:paddingLeft="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="10dp"
+            android:text="Email:"
+            android:textColor="#00224f"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="250dp"
+            android:layout_height="48dp"
+            android:background="@drawable/custombutton"
+            android:drawablePadding="10dp"
+            android:paddingLeft="20dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="10dp"
+            android:text="Course:"
+            android:textColor="#00224f"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/Course"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:background="@drawable/custombutton"
+            android:drawablePadding="10dp"
+            android:paddingLeft="20dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="10dp"
+            android:text="Department :"
+            android:textColor="#00224f"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/dept"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:background="@drawable/custombutton"
+            android:drawablePadding="10dp"
+            android:paddingLeft="20dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="10dp"
+            android:text="Contact no:"
+            android:textColor="#00224f"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/Contact"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:background="@drawable/custombutton"
+            android:drawablePadding="10dp"
+            android:paddingLeft="20dp" />
+
+        <Button
+            android:id="@+id/adduser1"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:background="@drawable/loginbutton"
+            android:drawableLeft="@drawable/ic_baseline_add_24"
+            android:paddingLeft="10dp"
+            android:text="Add"
+            android:textAllCaps="false"
+            android:textColor="#FFFBF6" />
+
+
+    </LinearLayout>
 
 </LinearLayout>

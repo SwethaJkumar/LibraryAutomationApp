@@ -44,13 +44,10 @@ public class Readbook extends AppCompatActivity {
 
                 String bid = binding.etbid.getText().toString();
                 if (!bid.isEmpty()){
-
                     readData(bid);
                 }else{
-
                     Toast.makeText(Readbook.this,"PLease Enter Book Id",Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
         binding.editbname.setOnClickListener(new View.OnClickListener() {

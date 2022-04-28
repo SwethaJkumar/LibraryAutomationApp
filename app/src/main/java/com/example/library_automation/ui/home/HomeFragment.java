@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.library_automation.BookBorrow;
 import com.example.library_automation.Payment;
 import com.example.library_automation.R;
 import com.example.library_automation.databinding.FragmentHomeBinding;
@@ -41,6 +42,14 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), Payment.class);
+                startActivity(intent);
+            }
+        });
+        c2=(CardView) root.findViewById(R.id.cardView2);
+        c2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), BookBorrow.class);
                 startActivity(intent);
             }
         });
