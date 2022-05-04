@@ -3,8 +3,10 @@ package com.example.library_automation;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,8 +23,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class profile extends AppCompatActivity {
     TextView t1,t2;
@@ -34,6 +40,18 @@ public class profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        Intent intent =getIntent();
+        String str=intent.getStringExtra("username");
+        int index = str.indexOf('@');
+        str = str.substring(0,index);
+        str = str.replaceAll("\\.","");
+
+        TextView borrow=(TextView)findViewById(R.id.posts);
+        //String c = Long.toString(count);
+        borrow.setText("0");
+        String str1=str;
+        TextView uname=(TextView)findViewById(R.id.about);
+        uname.setText(str);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -62,6 +80,29 @@ public class profile extends AppCompatActivity {
                 showRecoverPasswordDialog();
             }
         });
+
+        //String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        Query query = rootRef.child("Borrow").orderByChild("Rollno").equalTo(str1);
+        ValueEventListener valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                    long count = ds.getChildrenCount();
+                    Log.d("TAG", "Count: " + count);
+                }
+                //TextView borrow=(TextView)findViewById(R.id.posts);
+                //String c = Long.toString(count);
+                //borrow.setText("0");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+               // Log.d(TAG, databaseError.getMessage());
+            }
+        };
+        query.addListenerForSingleValueEvent(valueEventListener);
+
     }
     ProgressDialog loadingBar;
     private void showRecoverPasswordDialog() {

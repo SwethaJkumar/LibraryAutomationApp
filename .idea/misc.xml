@@ -18,17 +18,23 @@
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.26614583333333336" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.26614583333333336" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/drawable/ic_menu_camera.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/drawable/ic_search.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/drawable/loginbutton.xml" value="0.26614583333333336" />
+        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/drawable/search.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/drawable/side_nav_bar.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/drawable/tag_background.xml" value="0.26205128205128203" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/drawable/touch_effect.xml" value="0.26205128205128203" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_addbook.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_adduser.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_admin_login.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_adminhome.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_adminhome.xml" value="0.33101851851851855" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_adminmenu.xml" value="0.176" />
-        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_bookborrow.xml" value="0.13550135501355012" />
+        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_book_details.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_book_info.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_book_search.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_bookborrow.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_borrow.xml" value="0.13858695652173914" />
+        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_borrowlist.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_deletebook.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_deleteuser.xml" value="0.15353260869565216" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_guesthome.xml" value="0.1" />
@@ -37,14 +43,19 @@
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_main2.xml" value="0.1911231884057971" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_menu.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_menu_admin.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_opac.xml" value="0.6" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_payment.xml" value="0.264" />
-        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_profile.xml" value="0.4118773946360153" />
+        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_profile.xml" value="0.2222222222222222" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_readbook.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_readborrow.xml" value="0.21580188679245282" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_readuser.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/adduser_fragment.xml" value="0.4" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/app_bar_adminmenu.xml" value="0.12708333333333333" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/app_bar_menu.xml" value="0.14673913043478262" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/app_bar_menu_admin.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/book_rv_item.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/borrow_info.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/card_holder.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/content_adminmenu.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/content_menu.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/content_menu_admin.xml" value="0.1" />
@@ -54,7 +65,7 @@
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/fragment_deleteuser.xml" value="0.12708333333333333" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/fragment_faqs.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/fragment_gallery.xml" value="0.536" />
-        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/fragment_home.xml" value="0.16274089935760172" />
+        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/fragment_home_admin.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/fragment_opac.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/fragment_slideshow.xml" value="0.25" />
@@ -71,6 +82,7 @@
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/menu/main_activity2.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/menu/menu_.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/menu/navigation_adminmenu.xml" value="0.4" />
+        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/menu/search.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/app/src/main/res/drawable/hbutton.xml" value="0.14322916666666666" />
         <entry key="..\:/AndroidStudioProjects/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/app/src/main/res/layout/activity_menu.xml" value="0.12158054711246201" />

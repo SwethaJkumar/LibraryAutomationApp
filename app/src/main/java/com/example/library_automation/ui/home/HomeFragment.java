@@ -16,6 +16,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.library_automation.BookBorrow;
+import com.example.library_automation.BookSearch;
 import com.example.library_automation.Payment;
 import com.example.library_automation.R;
 import com.example.library_automation.databinding.FragmentHomeBinding;
@@ -37,6 +38,14 @@ public class HomeFragment extends Fragment {
         t.setText("E-Library");
 
         TextPaint paint = t.getPaint();
+        c1=(CardView) root.findViewById(R.id.cardView1);
+        c1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), BookSearch.class);
+                startActivity(intent);
+            }
+        });
         c3=(CardView) root.findViewById(R.id.cardView3);
         c3.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -179,7 +179,7 @@ public class BookBorrow extends AppCompatActivity {
         Borrow borrow = new Borrow(rno,bid1,bname1,formattedDate1,retur);
         db = FirebaseDatabase.getInstance();
         reference = db.getReference("Borrow");
-        reference.child(binding.txtbookid.getText().toString()).updateChildren(Borrow);
+        reference.child(rno).child(binding.txtbookid.getText().toString()).updateChildren(Borrow);
             // reference.addOnCompleteListener(new OnCompleteListener() {
            // if (task.isSuccessful()){
         update_books(bid1);

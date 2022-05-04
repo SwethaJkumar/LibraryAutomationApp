@@ -27,7 +27,8 @@ public class Menu_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
        // t1 = findViewById(R.id.textView);
         Intent intent =getIntent();
-        String str=intent.getStringExtra("username");
+        String str1=intent.getStringExtra("username");
+        String str = str1;
       //  String str1=intent.getStringExtra("name");
        // t1.setText(str);
         binding = ActivityMenuBinding.inflate(getLayoutInflater());
@@ -50,15 +51,20 @@ public class Menu_Activity extends AppCompatActivity {
         View headerView = navigationView.getHeaderView(0);
         TextView name = (TextView) headerView.findViewById(R.id.name);
         TextView mail =(TextView) headerView.findViewById(R.id.textView);
-        mail.setText(str);
+        mail.setText(str1);
        // name.setText(str1);
         mail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), profile.class);
+                intent.putExtra("username",str1);
                 startActivity(intent);
             }
         });
+        int index = str.indexOf('@');
+        str = str.substring(0,index);
+        str = str.replaceAll("\\.","");
+        name.setText(str);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_opac, R.id.nav_support,R.id.nav_faqs,R.id.nav_contact).setOpenableLayout(drawer).build();
