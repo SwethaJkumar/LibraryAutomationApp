@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,7 +26,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class profile extends AppCompatActivity {
@@ -35,7 +33,8 @@ public class profile extends AppCompatActivity {
     public ProgressDialog loginprogress;
     private FirebaseAuth mAuth;
     private FirebaseDatabase firebaseDatabase;
-    private DatabaseReference databaseReference;
+    private DatabaseReference databaseReference,databaseReference1;
+    private int count=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,7 +79,28 @@ public class profile extends AppCompatActivity {
                 showRecoverPasswordDialog();
             }
         });
+        databaseReference = FirebaseDatabase.getInstance().getReference("Borrow").child(str);
+        //databaseReference1 =FirebaseDatabase.getInstance().getReference().child(str);
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                   count=(int) snapshot.getChildrenCount();
+                   borrow.setText(Integer.toString(count));
+                }
+                else
+                {
+                    borrow.setText("0");
+                }
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+/*
         //String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
         Query query = rootRef.child("Borrow").orderByChild("Rollno").equalTo(str1);
@@ -102,6 +122,7 @@ public class profile extends AppCompatActivity {
             }
         };
         query.addListenerForSingleValueEvent(valueEventListener);
+        */
 
     }
     ProgressDialog loadingBar;

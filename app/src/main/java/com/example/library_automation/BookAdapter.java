@@ -2,7 +2,6 @@ package com.example.library_automation;
 
 import android.content.Context;
 import android.content.Intent;
-//import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
+
+//import android.support.annotation.NonNull;
 
 public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder>{
     private ArrayList<BookInfo> bookInfoArrayList;
@@ -46,7 +45,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
         holder.dateTV.setText(bookInfo.getPublishedDate());
 
         // below line is use to set image from URL in our image view.
-        Picasso.get().load(bookInfo.getThumbnail()).into(holder.bookIV);
+       // Picasso.get().load(bookInfo.getThumbnail()).into(holder.bookIV);
 
         // below line is use to add on click listener for our item of recycler view.
         holder.itemView.setOnClickListener(new View.OnClickListener() {

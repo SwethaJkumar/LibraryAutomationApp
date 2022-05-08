@@ -4,32 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
     tools:context=".BookBorrow">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
         android:layout_alignParentTop="true"
-        android:background="@android:color/background_light"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/gradient_background">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="600dp"
-            android:background="@android:color/white">
+            android:background="@drawable/gradient_background">
 
             <TextView
-                android:text="Search And Borrow"
+                android:id="@+id/textView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:id="@+id/textView13"
-                android:textStyle="normal|bold"
-                android:textSize="20sp"
-                android:textColor="@android:color/black"
                 android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="14dp"
+                android:text="Search And Borrow"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="normal|bold" />
 
             <EditText
                 android:id="@+id/txtbookid"
@@ -68,60 +70,60 @@
                 android:textAlignment="center" />
 
             <EditText
+                android:id="@+id/txtbookcategory"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/txtbookcategory"
-                android:layout_marginTop="21dp"
                 android:layout_below="@+id/txtbooklocation"
                 android:layout_alignStart="@+id/txtbooklocation"
                 android:layout_alignEnd="@+id/txtbooklocation"
-                android:textAlignment="center"
-                android:editable="false" />
+                android:layout_marginTop="21dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textAlignment="center" />
 
             <EditText
+                android:id="@+id/txtbooklocation"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/txtbooklocation"
-                android:layout_marginTop="23dp"
                 android:layout_below="@+id/txtbookname"
                 android:layout_alignStart="@+id/txtbookname"
-                android:textAlignment="center"
                 android:layout_alignEnd="@+id/txtbookname"
-                android:editable="false" />
+                android:layout_marginTop="23dp"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textAlignment="center" />
 
             <TextView
-                android:text="Sorry Book Borrowed By another Member"
+                android:id="@+id/textView16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView16"
                 android:layout_alignTop="@+id/btngetbook"
                 android:layout_centerHorizontal="true"
+                android:text="Sorry Book Borrowed By another Member"
                 android:textColor="@android:color/holo_red_dark" />
 
             <Button
-                android:text="Get"
+                android:id="@+id/btngetbook"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/btngetbook"
-                android:layout_marginTop="39dp"
-                android:background="@android:color/holo_blue_light"
                 android:layout_below="@+id/txtnumcopy"
                 android:layout_alignStart="@+id/btnsearchbook"
-                android:layout_alignEnd="@+id/txtnumcopy" />
+                android:layout_alignEnd="@+id/txtnumcopy"
+                android:layout_marginTop="39dp"
+                android:background="@android:color/holo_blue_light"
+                android:text="Get" />
 
             <TextView
-                android:text="Location"
+                android:id="@+id/textView27"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtbookname"
                 android:layout_alignStart="@+id/textView18"
-                android:id="@+id/textView27"
-                android:textSize="18sp"
-                android:textColor="@android:color/holo_blue_light" />
+                android:text="Location"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/textView28"

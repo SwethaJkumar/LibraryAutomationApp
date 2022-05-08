@@ -3,19 +3,18 @@ package com.example.library_automation;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.library_automation.databinding.ActivityReadborrowBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
 public class Readborrow extends AppCompatActivity {
     ActivityReadborrowBinding binding;
@@ -30,24 +29,33 @@ public class Readborrow extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+       /* l = findViewById(R.id.list);
+        ArrayAdapter<String> arr;
+        arr
+                = new ArrayAdapter<String>(
+                this,
+                R.layout.support_simple_spinner_dropdown_item, tutorials);
+        l.setAdapter(arr);
         binding.readb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 String rno = binding.etrno1.getText().toString();
+                String bid = binding.etbid.getText().toString();
                 if (!rno.isEmpty()){
-                    readData(rno);
+                    readData(rno,bid);
                 }else{
                     Toast.makeText(Readborrow.this,"PLease Enter Roll no",Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        });*/
     }
-    private void readData(String bid) {
+    private void readData(String rno,String bid) {
 
         reference = FirebaseDatabase.getInstance().getReference("Borrow");
-        reference.child(bid);
-        Query query=reference.orderByChild("Rollno").equalTo(bid);
+        reference.child(rno);
+       /* Query query=reference.orderByChild("BookId");
+
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -59,9 +67,9 @@ public class Readborrow extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
-        });
-      //  reference.child(bid).child("123").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-           /* @Override
+        });*/
+        reference.child(bid).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
 
                 if (task.isSuccessful()){
@@ -78,11 +86,11 @@ public class Readborrow extends AppCompatActivity {
                       //  String genre = String.valueOf(dataSnapshot.child("genre").getValue());
                        // String location = String.valueOf(dataSnapshot.child("location").getValue());
                        // String publication = String.valueOf(dataSnapshot.child("publication").getValue());
-                        binding.tvbid.setText(Bookid);
-                        binding.tvbname.setText(Bname);
-                        binding.tvrno.setText(rno2);
-                        binding.tvissue.setText(issue);
-                        binding.tvdue.setText(due);
+                     //   binding.tvbid.setText(Bookid);
+                       // binding.tvbname.setText(Bname);
+                        //binding.tvrno.setText(rno2);
+                        //binding.tvissue.setText(issue);
+                        //binding.tvdue.setText(due);
                        // binding.tvgenre.setText(genre);
                         //binding.tvlocation.setText(location);
                        // binding.tvpubl.setText(publication);
@@ -97,7 +105,6 @@ public class Readborrow extends AppCompatActivity {
 
             }
         });
-*/
     }
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()) {
