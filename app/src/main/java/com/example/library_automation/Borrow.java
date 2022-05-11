@@ -12,7 +12,6 @@ public class Borrow {
         this.rollno = rollno;
         this.bid = bid;
     }
-
     public Borrow(String rollno,String bid,String bname,String issuedate,String duedate) {
         this.rollno=rollno;
         this.bid = bid;
@@ -20,7 +19,6 @@ public class Borrow {
         this.issuedate = issuedate;
         this.duedate = duedate;
     }
-
 /*    public HashMap<String, Object> getAsMap(){
         HashMap<String, Object> userAsMap = new HashMap<>();
         userAsMap.put("username",username);
@@ -35,7 +33,6 @@ public class Borrow {
     /*public void setpassword(String password) {
         this.password = password;
     }*/
-
     public void setBname(String bname) {
         this.bname = bname;
     }
@@ -45,7 +42,6 @@ public class Borrow {
     public void setRollno(String rollno) {
         this.rollno=rollno;
     }
-
     public void setIssuedate(String issuedate) {
         this.issuedate = issuedate;
     }

@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.library_automation.databinding.ActivityBookborrowBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,10 +25,14 @@ import java.util.Calendar;
 import java.util.HashMap;
 
 public class BookBorrow extends AppCompatActivity {
+    public static final String NOTIFICATION_CHANNEL_ID = "10001" ;
+    private final static String default_notification_channel_id = "default" ;
+    final Calendar myCalendar = Calendar. getInstance () ;
     ActivityBookborrowBinding binding;
     //DatabaseReference databaseReference;
     FirebaseDatabase db;
     DatabaseReference reference;
+    private RecyclerView borrowedbooks;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -179,7 +184,9 @@ public class BookBorrow extends AppCompatActivity {
         Borrow borrow = new Borrow(rno,bid1,bname1,formattedDate1,retur);
         db = FirebaseDatabase.getInstance();
         reference = db.getReference("Borrow");
-        reference.child(rno).child(binding.txtbookid.getText().toString()).updateChildren(Borrow);
+        String key = reference.push().getKey();
+        reference.child(key).updateChildren(Borrow);
+       // reference.child(rno).child(binding.txtbookid.getText().toString()).updateChildren(Borrow);
             // reference.addOnCompleteListener(new OnCompleteListener() {
            // if (task.isSuccessful()){
         update_books(bid1);
@@ -213,4 +220,78 @@ public class BookBorrow extends AppCompatActivity {
         });
 
     }
+   /* @Override
+    public void onStart() {
+        super.onStart();
+       // update_books();
+       // my_borrowed_book();
+
+        NotificationManager notif=(NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+        Notification notify=new Notification.Builder(this).setContentTitle("Public Library")
+              //  .setSmallIcon(R.mipmap.icon_launcher)
+                .setStyle(new Notification.BigTextStyle().bigText("If you Have Any Library Books Please Return On the Date"))
+                .setAutoCancel(true).setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                .setVibrate(new long[] {1, 1, 1}).setPriority(Notification.PRIORITY_MAX).build();
+            /*   (getApplicationContext()).setContentTitle("Public Library").setContentText("If you Have Any Library Books Please Return On the Date").
+               setContentTitle("Public Library ").setSmallIcon(R.mipmap.icon_launcher).build();*/
+
+
+
+       // notify.flags |= Notification.FLAG_AUTO_CANCEL;
+       // notif.notify(0, notify);
+
+
+
+
+  //  }
+  /*  public void my_borrowed_book()
+    {
+
+        borrowedbooks=(RecyclerView)findViewById(R.id.borrowed_book);
+        borrowedbooks.setHasFixedSize(true);
+        borrowedbooks.setLayoutManager(new LinearLayoutManager(this));
+
+        reference= FirebaseDatabase.getInstance().getReference();
+        DatabaseReference ref=reference.child("BorrowedBooks").child(user.getUid()).child("Book");
+        FirebaseRecyclerAdapter<Borrow,blogviewholder> RecyclerAdapter=new FirebaseRecyclerAdapter<my_books, blogviewholder>(
+                my_books.class,
+                R.layout.my_books,
+                blogviewholder.class,
+                ref
+        ) {
+            @Override
+            protected void populateViewHolder(blogviewholder viewHolder, my_books model, int position) {
+
+                viewHolder.setBook_ID(model.getBook_ID());
+                viewHolder.setBook_name(model.getBook_Name());
+                viewHolder.setBook_category(model.getBook_Category());
+                viewHolder.setBorrowed_date(model.getBorrowed_Date());
+                viewHolder.setReturn_date(model.getReturn_Date());
+
+
+            }
+
+        };
+
+
+        borrowedbooks.setAdapter(RecyclerAdapter);
+
+
+
+
+    }
+
+
+
+    public static class blogviewholder extends RecyclerView.ViewHolder
+    {
+        View mview;
+        public blogviewholder(View itemView) {
+            super(itemView);
+            mview=itemView;
+
+
+
+
+        }*/
 }

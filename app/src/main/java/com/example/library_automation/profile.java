@@ -26,6 +26,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class profile extends AppCompatActivity {
@@ -79,19 +80,30 @@ public class profile extends AppCompatActivity {
                 showRecoverPasswordDialog();
             }
         });
-        databaseReference = FirebaseDatabase.getInstance().getReference("Borrow").child(str);
+       // databaseReference = FirebaseDatabase.getInstance().getReference("Borrow").child(str);
+        databaseReference = FirebaseDatabase.getInstance().getReference("Borrow");
+
         //databaseReference1 =FirebaseDatabase.getInstance().getReference().child(str);
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        Query query = databaseReference.orderByChild("Rollno").equalTo(str);
+        query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()){
+               /* if (snapshot.exists()){
                    count=(int) snapshot.getChildrenCount();
                    borrow.setText(Integer.toString(count));
+                }*/
+                for (DataSnapshot data : snapshot.getChildren()) {
+                    if (data.child("Rollno").getValue(String.class).equals(str1)) {
+                        count++;
+                        //Log.d("TAG", "Count1: " + count);
+                    }
                 }
-                else
+                //Log.d("TAG", "Count2: " + count);
+                borrow.setText(Integer.toString(count));
+               /* else
                 {
                     borrow.setText("0");
-                }
+                }*/
             }
 
             @Override
