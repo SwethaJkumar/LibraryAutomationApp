@@ -31,7 +31,7 @@
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_adminmenu.xml" value="0.176" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_book_details.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_book_info.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_book_search.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_book_search.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_bookborrow.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_borrow.xml" value="0.13858695652173914" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_borrowlist.xml" value="0.1" />
@@ -44,11 +44,14 @@
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_menu.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_menu_admin.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_opac.xml" value="0.6" />
+        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_overdue_details.xml" value="0.15670289855072464" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_payment.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_profile.xml" value="0.2222222222222222" />
+        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_read_research_paper.xml" value="0.15806159420289856" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_readbook.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_readborrow.xml" value="0.21580188679245282" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_readuser.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/activity_research_scholar.xml" value="0.10400000000000001" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/adduser_fragment.xml" value="0.4" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/app_bar_adminmenu.xml" value="0.12708333333333333" />
         <entry key="..\:/AndroidStudioProjects/Library_Automation/app/src/main/res/layout/app_bar_menu.xml" value="0.14673913043478262" />

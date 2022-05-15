@@ -23,7 +23,7 @@ public class Adminhome extends AppCompatActivity {
     TextView user1,user2,user3;
     TextView book1,book2,book3;
     TextView borrow3;
-    Button bh;
+    Button bh,rp,od;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +37,22 @@ public class Adminhome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),Borrowlist.class);
+                startActivity(intent);
+            }
+        });
+        rp = findViewById(R.id.rpaper);
+        rp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),ResearchScholar.class);
+                startActivity(intent);
+            }
+        });
+        od = findViewById(R.id.overdue);
+        od.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),OverdueDetails.class);
                 startActivity(intent);
             }
         });

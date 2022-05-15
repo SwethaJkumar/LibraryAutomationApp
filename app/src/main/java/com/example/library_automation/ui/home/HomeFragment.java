@@ -19,6 +19,7 @@ import com.example.library_automation.BookBorrow;
 import com.example.library_automation.BookSearch;
 import com.example.library_automation.Payment;
 import com.example.library_automation.R;
+import com.example.library_automation.ReadResearchPaper;
 import com.example.library_automation.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
@@ -59,6 +60,14 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), BookBorrow.class);
+                startActivity(intent);
+            }
+        });
+        c5=(CardView) root.findViewById(R.id.cardView5);
+        c5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ReadResearchPaper.class);
                 startActivity(intent);
             }
         });

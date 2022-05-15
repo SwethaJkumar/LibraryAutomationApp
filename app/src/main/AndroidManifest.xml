@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +13,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Library_Automation">
+        <activity
+            android:name=".OverdueDetails"
+            android:exported="false" />
+        <activity
+            android:name=".ReadResearchPaper"
+            android:exported="false" />
+        <activity
+            android:name=".ResearchScholar"
+            android:exported="false" />
         <activity
             android:name=".BookSearch"
             android:exported="false" />
@@ -95,6 +105,9 @@
             android:exported="false"
             android:label="@string/title_activity_menu"
             android:theme="@style/Theme.Library_Automation.NoActionBar" />
+        <activity
+            android:name=".BookDetails"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

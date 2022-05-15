@@ -360,7 +360,7 @@ public class Readuser extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String etcontact1=etcontact.getText().toString();
-                Saveedityear(rno,etcontact1);
+                Saveeditcontact(rno,etcontact1);
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

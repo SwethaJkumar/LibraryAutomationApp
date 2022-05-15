@@ -70,15 +70,10 @@ public class Addbook extends AppCompatActivity {
                 binding.location.setText("");
                 binding.publ.setText("");
                 Toast.makeText(Addbook.this,"Successfuly Updated",Toast.LENGTH_SHORT).show();
-
             }else {
-
                 Toast.makeText(Addbook.this,"Failed to Update",Toast.LENGTH_SHORT).show();
-
             }
-
         });
-
     }
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()) {
@@ -88,9 +83,7 @@ public class Addbook extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
     public boolean onCreateOptionsMenu(Menu menu) {
         return true;
     }
-
 }

@@ -260,7 +260,7 @@
                 <TextView
                     android:id="@+id/text_home5"
                     android:layout_width="100dp"
-                    android:text="Book data"
+                    android:text="Research Papers"
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/white"
                     android:layout_height="wrap_content"

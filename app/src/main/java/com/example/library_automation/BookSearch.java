@@ -45,6 +45,7 @@ public class BookSearch extends AppCompatActivity {
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Books");
         //databaseReference = FirebaseDatabase.getInstance().getReference().child("Books");
+        //databaseReference=databaseReference.get();
 
         /**
          * To write book to server:
@@ -57,6 +58,12 @@ public class BookSearch extends AppCompatActivity {
                 Log.d("TAG", "onDataChange: " + snapshot);
                 bookArrayList.clear();
                 for (DataSnapshot snap : snapshot.getChildren()) {
+                    //String bookId =snapshot.child("bookId").getValue(Book.class);
+                    //String bookName=snapshot.child("bookName").getValue(String.class);
+                    //String genre =ds.child("BookId").getValue(String.class);
+                    //String is=ds.child("Issuedate").getValue(String.class);
+                    //String Ddate=ds.child("Duedate").getValue(String.class);
+                    //bookArrayList.add(bookId);
                     bookArrayList.add(snap.getValue(Book.class));
                     bookCopyList.add(snap.getValue(Book.class));
                     adapter.notifyItemInserted(bookArrayList.size() - 1);

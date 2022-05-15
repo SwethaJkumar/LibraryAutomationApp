@@ -87,7 +87,7 @@ public class Readborrow extends AppCompatActivity implements AdapterView.OnItemS
                     String Ddate=ds.child("Duedate").getValue(String.class);
                     //String Bname = String.valueOf(snapshot.child("Bookname").getValue());
                     // list.add(borrow.getBname() + " "+borrow.getBid());
-                    list.add(Rno+ " " +Bookid + " "+Bname+ " "+Idate+" "+Ddate);
+                    list.add(" Roll no: "+Rno+ "\n " +" Book Id: "+Bookid + "\n "+" Book Name: "+Bname+ "\n "+" Issue Date: "+Idate+"\n "+" Due Date: "+Ddate);
                 }
                 l.setAdapter(adapter);
             }

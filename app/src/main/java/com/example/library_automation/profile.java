@@ -9,8 +9,11 @@ import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,8 +32,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class profile extends AppCompatActivity {
     TextView t1,t2;
+    ListView l;
+    ArrayAdapter <String> adapter;
+    Borrow borrow;
+    Button vb;
+    ArrayList<String> list;
     public ProgressDialog loginprogress;
     private FirebaseAuth mAuth;
     private FirebaseDatabase firebaseDatabase;
@@ -41,10 +51,12 @@ public class profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         Intent intent =getIntent();
+        l = findViewById(R.id.ublist);
         String str=intent.getStringExtra("username");
         int index = str.indexOf('@');
         str = str.substring(0,index);
         str = str.replaceAll("\\.","");
+        Button vb=(Button)findViewById(R.id.btnviewborrow);
 
         TextView borrow=(TextView)findViewById(R.id.posts);
         //String c = Long.toString(count);
@@ -56,19 +68,53 @@ public class profile extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+        vb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                readData(str1);
+
+            }
+        });
         mAuth = FirebaseAuth.getInstance();
        // databaseReference=FirebaseDatabase.getInstance().getReference("Users");
      //   databaseReference.orderByChild("First Name:");
 
         // initialising all views through id defined above
         t1=findViewById(R.id.editcontact);
-       /*t1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                EditContact();
+       t1.setOnClickListener(view -> {
+               // EditContact();
+                AlertDialog.Builder builder=new AlertDialog.Builder(this);
+                builder.setTitle("Enter your Contact No");
+                LinearLayout linearLayout=new LinearLayout(this);
+                final EditText cno= new EditText(this);
+
+                // write the email using which you registered
+                cno.setHint("Contact No");
+                cno.setMinEms(16);
+                cno.setInputType(InputType.TYPE_TEXT_VARIATION_WEB_EDIT_TEXT);
+                linearLayout.addView(cno);
+                linearLayout.setPadding(10,10,10,10);
+                builder.setView(linearLayout);
+
+                // Click on Recover and a email will be sent to your registered email id
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String cno1=cno.getText().toString().trim();
+                        Saveeditcontact(str1,cno1);
+                        //borrow_books(rno1);
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                builder.create().show();
                 //databaseReference.child("Users").child(userId).child("username").setValue(name);
-            }
-        });*/
+
+        });
         t2=findViewById(R.id.reset);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         loginprogress=new ProgressDialog(this);
@@ -105,10 +151,46 @@ public class profile extends AppCompatActivity {
                     borrow.setText("0");
                 }*/
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+    }
+    private void Saveeditcontact(String str1, String cno1) {
+        databaseReference = FirebaseDatabase.getInstance().getReference("Users");
+        // reference.child(bid).updateChildren(Book);
+        databaseReference.child(str1).child("Contact:").setValue(cno1);
+    }
+
+    private void readData(String rno) {
+        // reference = FirebaseDatabase.getInstance().getReference("Borrow");
+        //reference.child(rno);
+        databaseReference = FirebaseDatabase.getInstance().getReference("Borrow");
+        Query query = databaseReference.orderByChild("Rollno").equalTo(rno);
+        // ref.child("cbenu4cse19354").child("123");
+        //  ref.child(rno).child(bid);
+        list = new ArrayList<>();
+        adapter = new ArrayAdapter<String>(this,R.layout.borrow_info,R.id.borrowInfo,list);
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot ds: snapshot.getChildren())
+                {
+                    //borrow = ds.getValue(Borrow.class);
+                    //String Bookid = String.valueOf(snapshot.child("BookId").getValue());
+                    String Bname=ds.child("Bookname").getValue(String.class);
+                    String Bookid =ds.child("BookId").getValue(String.class);
+                    String Idate=ds.child("Issuedate").getValue(String.class);
+                    String Ddate=ds.child("Duedate").getValue(String.class);
+                    //String Bname = String.valueOf(snapshot.child("Bookname").getValue());
+                    // list.add(borrow.getBname() + " "+borrow.getBid());
+                    list.add("  Book Id: "+Bookid + "\n "+" Book Name: "+Bname+ "\n "+" Issue Date: "+Idate+"\n "+" Due Date: "+Ddate);
+                }
+                l.setAdapter(adapter);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
             }
         });
 
