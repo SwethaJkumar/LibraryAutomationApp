@@ -4,6 +4,8 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.InputType;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -70,7 +72,7 @@ public class BookBorrow extends AppCompatActivity {
             if (!bid.isEmpty()){
                 readData(bid);
             }else{
-                Toast.makeText(BookBorrow.this,"PLease Enter Book Id",Toast.LENGTH_SHORT).show();
+                Toast.makeText(BookBorrow.this,"PLease Enter Valid data",Toast.LENGTH_SHORT).show();
             }
             //String bname = binding.bookname.getText().toString();
             //String author = binding.author.getText().toString();
@@ -97,7 +99,11 @@ public class BookBorrow extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String rno1=rno.getText().toString().trim();
-                        borrow_books(rno1);
+                        if (!rno1.isEmpty()){
+                            borrow_books(rno1);
+                        }else{
+                            Toast.makeText(BookBorrow.this,"PLease Enter Valid data",Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
                 builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -294,4 +300,16 @@ public class BookBorrow extends AppCompatActivity {
 
 
         }*/
+  public boolean onOptionsItemSelected(MenuItem item){
+      switch (item.getItemId()) {
+          case android.R.id.home:
+              finish();
+              return true;
+      }
+      return super.onOptionsItemSelected(item);
+  }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return true;
+    }
 }

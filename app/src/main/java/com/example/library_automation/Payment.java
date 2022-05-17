@@ -1,5 +1,6 @@
 package com.example.library_automation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -37,10 +38,15 @@ public class Payment extends AppCompatActivity {
                 switch (checkedId)
                 {
                     case R.id.rb1:
+                        Intent intent=new Intent(Payment.this,Paymentform.class);
+                        startActivity(intent);
+                        finish();
                         break;
                     case R.id.rb2:
                         break;
                     case R.id.rb3:
+                        Intent upipay = new Intent(getApplicationContext(),upi.class);
+                        startActivity(upipay);
                         break;
                 }
             }

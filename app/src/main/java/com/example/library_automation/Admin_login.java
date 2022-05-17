@@ -28,6 +28,7 @@ public class Admin_login extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
+    private adminvalidation muservalidation;
     EditText e1,e2,e3;
 Button b1;
     @Override
@@ -43,6 +44,8 @@ Button b1;
         e1 = findViewById(R.id.user);
         e2 = findViewById(R.id.pass);
         e3 = findViewById(R.id.pin);
+        muservalidation = new adminvalidation();
+        e1.addTextChangedListener(muservalidation);
         String pin = e3.getText().toString();
         String pinmatch = "admin123";
         b1.setOnClickListener(new View.OnClickListener() {

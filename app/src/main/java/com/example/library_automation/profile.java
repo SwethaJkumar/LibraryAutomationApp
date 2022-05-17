@@ -56,6 +56,7 @@ public class profile extends AppCompatActivity {
         int index = str.indexOf('@');
         str = str.substring(0,index);
         str = str.replaceAll("\\.","");
+        str=str.substring(str.length() - 8 );
         Button vb=(Button)findViewById(R.id.btnviewborrow);
 
         TextView borrow=(TextView)findViewById(R.id.posts);

@@ -7,7 +7,7 @@ public class User {
     private String fname;
     private String lname;
     private String email;
-    private String course;
+  //  private String course;
     private String dept;
     private String password;
     private int year;
@@ -23,12 +23,12 @@ public class User {
         this.password=password;
     }
 
-    public User(String rollno,String fname,String lname,String email,String password,String course,String dept,int year,String contact) {
+    public User(String rollno,String fname,String lname,String email,String password,String dept,int year,String contact) {
         this.rollno=rollno;
         this.email = email;
         this.fname = fname;
         this.lname = lname;
-        this.course = course;
+        //this.course = course;
         this.dept = dept;
         this.year = year;
         this.contact = contact;
@@ -66,9 +66,9 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-    public void setCourse(String course) {
-        this.course = course;
-    }
+    //public void setCourse(String course) {
+      //  this.course = course;
+   // }
     public void setDept(String dept) {
         this.dept = dept;
     }
@@ -95,9 +95,9 @@ public class User {
     public String getPassword() {
         return password;
     }
-    public String getCourse() {
-        return course;
-    }
+  //  public String getCourse() {
+      //  return course;
+ //   }
 
     public String getDept() {
         return dept;

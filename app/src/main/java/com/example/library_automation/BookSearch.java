@@ -10,6 +10,7 @@ import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,10 +30,15 @@ public class BookSearch extends AppCompatActivity {
     ValueEventListener valueEventListener;
     RecyclerView recyclerView;
     TextView noResultsMessage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_search);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
         bookArrayList = new ArrayList<>();
         bookCopyList = new ArrayList<>();
         adapter = new BooksearchAdapter(bookArrayList);
@@ -41,7 +47,6 @@ public class BookSearch extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setAdapter(adapter);
-
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Books");
         //databaseReference = FirebaseDatabase.getInstance().getReference().child("Books");
@@ -56,7 +61,7 @@ public class BookSearch extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Log.d("TAG", "onDataChange: " + snapshot);
-                bookArrayList.clear();
+             //   bookArrayList.clear();
                 for (DataSnapshot snap : snapshot.getChildren()) {
                     //String bookId =snapshot.child("bookId").getValue(Book.class);
                     //String bookName=snapshot.child("bookName").getValue(String.class);
@@ -97,7 +102,6 @@ public class BookSearch extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.search, menu);
 
         MenuItem searchItem = menu.findItem(R.id.searchBar);
-
         SearchView searchView = (SearchView) searchItem.getActionView();
         searchView.setQueryHint("Search For Books");
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -123,21 +127,28 @@ public class BookSearch extends AppCompatActivity {
 
     @SuppressLint("NotifyDataSetChanged")
     void filterArrayList(String s) {
-        bookArrayList.clear();
+       // bookArrayList.clear();
         adapter.notifyDataSetChanged();
         for (Book i : bookCopyList) {
-            if (i.getBname().toLowerCase().contains(s.toLowerCase()) || i.getBid().toLowerCase().contains(s.toLowerCase())) {
+           if (i.getBname().toLowerCase().contains(s.toLowerCase()) || i.getBid().toLowerCase().contains(s.toLowerCase())) {
+           // if (i.getBname().equals(s)) {
                 bookArrayList.add(i);
                 adapter.notifyItemInserted(bookArrayList.size() - 1);
             }
-            if(bookArrayList.isEmpty()){
+            if (bookArrayList.isEmpty()) {
                 noResultsMessage.setVisibility(View.VISIBLE);
-            }
-            else{
+            } else {
                 noResultsMessage.setVisibility(View.GONE);
             }
         }
     }
 
-
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

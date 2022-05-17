@@ -394,20 +394,20 @@ public class Readuser extends AppCompatActivity {
 
                         Toast.makeText(Readuser.this,"Successfully Read",Toast.LENGTH_SHORT).show();
                         DataSnapshot dataSnapshot = task.getResult();
-                        String rollno = String.valueOf(dataSnapshot.child("Roll no").getValue());
-                        String firstName = String.valueOf(dataSnapshot.child("First Name").getValue());
-                        String lastName = String.valueOf(dataSnapshot.child("Last Name").getValue());
-                        String email = String.valueOf(dataSnapshot.child("Email").getValue());
-                        String course = String.valueOf(dataSnapshot.child("Course").getValue());
-                        String dept = String.valueOf(dataSnapshot.child("Department").getValue());
-                        String year = String.valueOf(dataSnapshot.child("Year").getValue());
-                        String contact = String.valueOf(dataSnapshot.child("Contact").getValue());
+                        String rollno = String.valueOf(dataSnapshot.child("rollNum").getValue());
+                        String firstName = String.valueOf(dataSnapshot.child("firstName").getValue());
+                        String lastName = String.valueOf(dataSnapshot.child("lastName").getValue());
+                        String email = String.valueOf(dataSnapshot.child("email").getValue());
+                        //String course = String.valueOf(dataSnapshot.child("Course").getValue());
+                        String dept = String.valueOf(dataSnapshot.child("department").getValue());
+                        String year = String.valueOf(dataSnapshot.child("year").getValue());
+                        String contact = String.valueOf(dataSnapshot.child("contactNum").getValue());
                         binding.tvrno.setText(rollno);
                         binding.tvFirstName.setText(firstName);
                         binding.tvLastName.setText(lastName);
                         binding.tvEmail.setText(email);
                         binding.tvDept.setText(dept);
-                        binding.tvCourse.setText(course);
+                        //binding.tvCourse.setText(course);
                         binding.tvYear.setText(year);
                         binding.tvContact.setText(contact);
 

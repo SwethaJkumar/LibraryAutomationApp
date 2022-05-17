@@ -19,30 +19,30 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />-->
 
-
         <TextView
             android:id="@+id/tt1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
             android:text="Borrow Details"
-            android:textColor="@color/white"
+            android:textColor="#540661"
             android:textSize="30sp"
-            android:textStyle="bold"
+            android:textStyle="normal|bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
         <Spinner
         android:id="@+id/spinner1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="200dp"
         android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"  />
+
 
         <EditText
             android:id="@+id/etrno1"
@@ -52,6 +52,7 @@
             android:textColor="@color/white"
             android:textColorHint="@color/colorSecondaryText"
             android:paddingLeft="20dp"
+            android:hint="Enter Yout Answer"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/spinner1"/>
@@ -63,7 +64,7 @@
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="320dp"
-            android:backgroundTint="@color/purple_200"
+            android:backgroundTint="#540661"
             android:text="View Borrow Details"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.49"

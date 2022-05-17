@@ -1,5 +1,9 @@
 package com.example.library_automation;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -7,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import com.example.library_automation.databinding.ActivityAddbookBinding;
 import com.google.firebase.database.DatabaseReference;
@@ -38,6 +44,7 @@ public class Addbook extends AppCompatActivity {
             String location=binding.location.getText().toString();
             String publication = binding.publ.getText().toString();
             addBook(bname,bid,author,isbn,numcopy,genre,location,publication);
+            notification(bname,author);
         });
     }
     private void addBook(String bname,String bid,String author,String isbn,String Numcopy,String genre,String location,String publication) {
@@ -74,6 +81,36 @@ public class Addbook extends AppCompatActivity {
                 Toast.makeText(Addbook.this,"Failed to Update",Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    private void notification(String bname,String author) {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel channel =
+                    new NotificationChannel("n","n", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+
+        }
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this,"n")
+                .setContentText("Library")
+                .setSmallIcon(R.drawable.ic_baseline_notifications_24)
+                .setAutoCancel(true)
+                .setContentText("New book is added");
+
+        NotificationManagerCompat managerCompact = NotificationManagerCompat.from(this);
+        managerCompact.notify(999,builder.build());
+        SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref",MODE_PRIVATE);
+
+// Creating an Editor object to edit(write to the file)
+        SharedPreferences.Editor myEdit = sharedPreferences.edit();
+
+// Storing the key and its value as the data fetched from edittext
+        myEdit.putString("bname", bname);
+        myEdit.putString("author", author);
+
+// Once the changes have been made,
+// we need to commit to apply those changes made,
+// otherwise, it will throw an error
+        myEdit.commit();
     }
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()) {

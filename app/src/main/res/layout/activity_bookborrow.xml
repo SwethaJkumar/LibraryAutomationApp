@@ -27,10 +27,10 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="14dp"
+                android:layout_marginTop="50dp"
                 android:text="Search And Borrow"
-                android:textColor="@android:color/black"
-                android:textSize="20sp"
+                android:textColor="#540661"
+                android:textSize="30sp"
                 android:textStyle="normal|bold" />
 
             <EditText
@@ -53,7 +53,7 @@
                 android:layout_alignStart="@+id/txtbookid"
                 android:layout_alignEnd="@+id/txtbookid"
                 android:layout_marginTop="27dp"
-                android:background="@android:color/holo_blue_light"
+                android:backgroundTint="#540661"
                 android:text="search" />
 
             <EditText
@@ -63,7 +63,8 @@
                 android:layout_alignStart="@+id/txtbookid"
                 android:layout_alignEnd="@+id/txtbookid"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="240dp"
+                android:layout_marginTop="255dp"
+                android:hint="Book Name"
                 android:editable="false"
                 android:ems="10"
                 android:inputType="textPersonName"
@@ -79,6 +80,7 @@
                 android:layout_marginTop="21dp"
                 android:editable="false"
                 android:ems="10"
+                android:hint="Genre"
                 android:inputType="textPersonName"
                 android:textAlignment="center" />
 
@@ -89,20 +91,22 @@
                 android:layout_below="@+id/txtbookname"
                 android:layout_alignStart="@+id/txtbookname"
                 android:layout_alignEnd="@+id/txtbookname"
+                android:hint="Location"
                 android:layout_marginTop="23dp"
                 android:editable="false"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:textAlignment="center" />
 
-            <TextView
+         <!--   <TextView
                 android:id="@+id/textView16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/btngetbook"
+                android:layout_below="@+id/txtnumcopy"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
                 android:text="Sorry Book Borrowed By another Member"
-                android:textColor="@android:color/holo_red_dark" />
+                android:textColor="@android:color/holo_red_dark" />-->
 
             <Button
                 android:id="@+id/btngetbook"
@@ -111,18 +115,18 @@
                 android:layout_below="@+id/txtnumcopy"
                 android:layout_alignStart="@+id/btnsearchbook"
                 android:layout_alignEnd="@+id/txtnumcopy"
-                android:layout_marginTop="39dp"
-                android:background="@android:color/holo_blue_light"
+                android:layout_marginTop="45dp"
+                android:backgroundTint="#540661"
                 android:text="Get" />
 
-            <TextView
+        <!--   <TextView
                 android:id="@+id/textView27"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtbookname"
                 android:layout_alignStart="@+id/textView18"
                 android:text="Location"
-                android:textColor="@android:color/holo_blue_light"
+                android:textColor="@color/purple_200"
                 android:textSize="18sp" />
 
             <TextView
@@ -132,9 +136,9 @@
                 android:layout_below="@+id/txtbooklocation"
                 android:layout_alignStart="@+id/textView27"
                 android:text="Genre"
-                android:textColor="@android:color/holo_blue_light"
+                android:textColor="@color/purple_200"
                 android:textSize="18sp" />
-
+-->
             <EditText
                 android:id="@+id/txtnumcopy"
                 android:layout_width="wrap_content"
@@ -143,20 +147,21 @@
                 android:layout_alignStart="@+id/txtbookcategory"
                 android:layout_alignEnd="@+id/txtbookcategory"
                 android:layout_marginTop="26dp"
+                android:hint="No. of copies"
                 android:editable="false"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
-            <TextView
+          <!--  <TextView
                 android:id="@+id/textView30"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtbookcategory"
                 android:layout_alignStart="@+id/textView28"
                 android:text="No. of copies"
-                android:textColor="@android:color/holo_blue_light"
+                android:textColor="@color/purple_200"
                 android:textSize="18sp" />
 
             <TextView
@@ -165,12 +170,12 @@
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/txtbooklocation"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="42dp"
+                android:layout_marginBottom="40dp"
                 android:text="Book Name"
                 android:textAlignment="center"
-                android:textColor="@android:color/holo_blue_light"
+                android:textColor="@color/purple_200"
                 android:textSize="18sp" />
-
+-->
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

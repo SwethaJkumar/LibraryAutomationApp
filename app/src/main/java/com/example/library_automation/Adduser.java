@@ -24,7 +24,6 @@ import java.util.HashMap;
 
 public class Adduser extends AppCompatActivity {
     ActivityAdduserBinding binding;
-    //DatabaseReference databaseReference;
     FirebaseDatabase db;
     DatabaseReference reference;
     @Override
@@ -42,47 +41,43 @@ public class Adduser extends AppCompatActivity {
             String lname = binding.lname1.getText().toString();
             String emailid = binding.email1.getText().toString();
             String password=binding.pass1.getText().toString();
-            String course = binding.Course1.getText().toString();
+           // String course = binding.Course1.getText().toString();
             String dept = binding.dept1.getText().toString();
             String year1 = binding.year1.getText().toString();
             int year = Integer.parseInt(year1);
             String contact = binding.Contact1.getText().toString();
 
-            addUser(rollno,fname,lname,emailid,password,course,dept,year,contact);
+            addUser(rollno,fname,lname,emailid,password,dept,year,contact);
         });
     }
-    private void addUser(String rollno,String fname,String lname,String emailid,String password,String course,String dept,int year,String contact) {
+    private void addUser(String rollno,String fname,String lname,String emailid,String password,String dept,int year,String contact) {
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(emailid, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             HashMap<String, Object> User = new HashMap<>();
-                            User.put("Roll no",rollno);
-                            User.put("First Name",fname);
-                            User.put("Last Name",lname);
-                            User.put("Email",emailid);
-                            User.put("Password",password);
-                            User.put("Course",course);
-                            User.put("Department",dept);
-                            User.put("Year",year);
-                            User.put("Contact",contact);
+                            User.put("rollNum",rollno);
+                            User.put("firstName",fname);
+                            User.put("lastName",lname);
+                            User.put("email",emailid);
+                            User.put("password",password);
+                          //  User.put("Course",course);
+                            User.put("department",dept);
+                            User.put("year",year);
+                            User.put("contactNum",contact);
 
-                            User user = new User(rollno,fname,lname,emailid,password,course,dept,year,contact);
+                            User user = new User(rollno,fname,lname,emailid,password,dept,year,contact);
                             db = FirebaseDatabase.getInstance();
                             reference = db.getReference("Users");
-                            // databaseReference = FirebaseDatabase.getInstance().getReference("Users");
-                            //databaseReference.child(rollno).updateChildren(User).addOnCompleteListener(new OnCompleteListener() {
-                            // reference.child("Users").child(user.getRollno()).setValue(user).addOnCompleteListener(task -> {
                             reference.child(binding.rno1.getText().toString()).updateChildren(User).addOnCompleteListener(taskAdd -> {
-                                // reference.addOnCompleteListener(new OnCompleteListener() {
                                 if (taskAdd.isSuccessful()){
                                     binding.rno1.setText("");
                                     binding.name1.setText("");
                                     binding.lname1.setText("");
                                     binding.email1.setText("");
                                     binding.pass1.setText("");
-                                    binding.Course1.setText("");
+                                    //binding.Course1.setText("");
                                     binding.dept1.setText("");
                                     binding.year1.setText("");
                                     binding.Contact1.setText("");
@@ -96,7 +91,6 @@ public class Adduser extends AppCompatActivity {
 
                             });
 
-
                             Log.d(TAG, "createUserWithEmail:success");
 
                         } else {
@@ -107,9 +101,6 @@ public class Adduser extends AppCompatActivity {
                         }
                     }
                 });
-     //   String r=rollno;
-       // if (!firstName.isEmpty() && !lastName.isEmpty() && !email.isEmpty() && !rollno.isEmpty()){
-
     }
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()) {

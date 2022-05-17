@@ -17,6 +17,8 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.library_automation.BookBorrow;
 import com.example.library_automation.BookSearch;
+import com.example.library_automation.Notification;
+import com.example.library_automation.Opac;
 import com.example.library_automation.Payment;
 import com.example.library_automation.R;
 import com.example.library_automation.ReadResearchPaper;
@@ -63,11 +65,27 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        c4=(CardView) root.findViewById(R.id.cardView4);
+        c4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Opac.class);
+                startActivity(intent);
+            }
+        });
         c5=(CardView) root.findViewById(R.id.cardView5);
         c5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), ReadResearchPaper.class);
+                startActivity(intent);
+            }
+        });
+        c6=(CardView) root.findViewById(R.id.cardView6);
+        c6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Notification.class);
                 startActivity(intent);
             }
         });

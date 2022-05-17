@@ -83,7 +83,7 @@ public class login extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                Intent intent = new Intent(login.this, Guesthome.class);
+                Intent intent = new Intent(login.this, Opac.class);
                 startActivity(intent);
             }
         });
@@ -214,34 +214,7 @@ public class login extends AppCompatActivity {
                 }
             }
         });
-       /* reference = FirebaseDatabase.getInstance().getReference("Users");
-        reference.child(username).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
 
-                if (task.isSuccessful()){
-
-                    if (task.getResult().exists()){
-
-                        Toast.makeText(Readuser.this,"Successfully Read",Toast.LENGTH_SHORT).show();
-                        DataSnapshot dataSnapshot = task.getResult();
-                        String firstName = String.valueOf(dataSnapshot.child("First Name:").getValue());
-                        binding.tvFirstName.setText(firstName);
-
-                    }else {
-
-                        Toast.makeText(Readuser.this,"User Doesn't Exist",Toast.LENGTH_SHORT).show();
-
-                    }
-
-
-                }else {
-
-                    Toast.makeText(Readuser.this,"Failed to read",Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });*/
     }
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()) {

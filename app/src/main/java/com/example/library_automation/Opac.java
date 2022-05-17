@@ -87,8 +87,13 @@ public class Opac extends AppCompatActivity {
                 try {
                     JSONArray itemsArray = response.getJSONArray("items");
                     for (int i = 0; i < itemsArray.length(); i++) {
+                        String thumbnailUrl = "";
                         JSONObject itemsObj = itemsArray.getJSONObject(i);
                         JSONObject volumeObj = itemsObj.getJSONObject("volumeInfo");
+                        JSONObject thumbnailUrlObject = volumeObj.optJSONObject("imageLinks");
+                        if (thumbnailUrlObject != null && thumbnailUrlObject.has("thumbnail")) {
+                            thumbnailUrl = thumbnailUrlObject.getString("thumbnail");
+                        }
                         String title = volumeObj.optString("title");
                         String subtitle = volumeObj.optString("subtitle");
                         JSONArray authorsArray = volumeObj.getJSONArray("authors");

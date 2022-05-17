@@ -17,13 +17,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 public class Adminhome extends AppCompatActivity {
-    ImageButton arrow,arrow1,arrow3;
-    LinearLayout hiddenView,hiddenView1,hiddenView2;
-    CardView cardView,cardView1,cardView2;
+    ImageButton arrow,arrow1;
+    LinearLayout hiddenView,hiddenView1;
+    CardView cardView,cardView1;
     TextView user1,user2,user3;
     TextView book1,book2,book3;
-    TextView borrow3;
-    Button bh,rp,od;
+    Button rp,od,br;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,54 +31,45 @@ public class Adminhome extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-        bh = findViewById(R.id.bh);
-        bh.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),Borrowlist.class);
-                startActivity(intent);
-            }
+        br = findViewById(R.id.readtt3);
+        br.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(),Readborrow.class);
+            startActivity(intent);
         });
-        rp = findViewById(R.id.rpaper);
-        rp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),ResearchScholar.class);
-                startActivity(intent);
-            }
+       rp = findViewById(R.id.rpaper);
+        rp.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(),ResearchScholar.class);
+            startActivity(intent);
         });
-        od = findViewById(R.id.overdue);
-        od.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),OverdueDetails.class);
-                startActivity(intent);
-            }
+       od = findViewById(R.id.overdue);
+        od.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(),OverdueDetails.class);
+            startActivity(intent);
         });
         cardView = findViewById(R.id.base_cardview1);
         arrow = findViewById(R.id.arrow_button);
         hiddenView = findViewById(R.id.hidden_view);
-        cardView2 = findViewById(R.id.base_cardview3);
-        arrow3 = findViewById(R.id.arrow_button3);
-        hiddenView2 = findViewById(R.id.hidden_view3);
+        //cardView2 = findViewById(R.id.base_cardview3);
+        //arrow3 = findViewById(R.id.arrow_button3);
+       // hiddenView2 = findViewById(R.id.hidden_view3);
         user1 = findViewById(R.id.addtt);
         user2 = findViewById(R.id.deletett);
         user3 = findViewById(R.id.readtt);
-        //cardView1 = findViewById(R.id.base_cardview2);
-        //arrow1 = findViewById(R.id.arrow_button1);
-        //hiddenView1 = findViewById(R.id.hidden_view1);
+        cardView1 = findViewById(R.id.base_cardview2);
+        arrow1 = findViewById(R.id.arrow_button1);
+        hiddenView1 = findViewById(R.id.hidden_view1);
         book1 = findViewById(R.id.addtt1);
         book2 = findViewById(R.id.deletett1);
         book3 = findViewById(R.id.readtt1);
 
-        borrow3 = findViewById(R.id.readtt3);
-        borrow3.setOnClickListener(new View.OnClickListener() {
+        //borrow3 = findViewById(R.id.readtt3);
+      /* borrow3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),Readborrow.class);
                 startActivity(intent);
             }
-        });
+        });*/
         user1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -149,9 +139,6 @@ public class Adminhome extends AppCompatActivity {
                 }
             }
         });
-        cardView1 = findViewById(R.id.base_cardview2);
-        arrow1 = findViewById(R.id.arrow_button1);
-        hiddenView1 = findViewById(R.id.hidden_view1);
 
         arrow1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -178,7 +165,7 @@ public class Adminhome extends AppCompatActivity {
                 }
             }
         });
-        arrow3.setOnClickListener(new View.OnClickListener() {
+       /* arrow3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // If the CardView is already expanded, set its visibility
@@ -193,18 +180,16 @@ public class Adminhome extends AppCompatActivity {
                     hiddenView2.setVisibility(View.GONE);
                     arrow.setImageResource(R.drawable.ic_baseline_expand_more_24);
                 }
-
                 // If the CardView is not expanded, set its visibility
                 // to visible and change the expand more icon to expand less.
                 else {
-
                     TransitionManager.beginDelayedTransition(cardView2,
                             new AutoTransition());
                     hiddenView2.setVisibility(View.VISIBLE);
                     arrow3.setImageResource(R.drawable.ic_baseline_expand_less_24);
                 }
             }
-        });
+        });*/
     }
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()) {
@@ -214,7 +199,6 @@ public class Adminhome extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
     public boolean onCreateOptionsMenu(Menu menu) {
         return true;
     }

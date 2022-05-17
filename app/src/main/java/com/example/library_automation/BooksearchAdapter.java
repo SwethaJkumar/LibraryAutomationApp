@@ -27,8 +27,8 @@ public class BooksearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
-        ((BookHolder) holder).bookID.setText(bookArrayList.get(position).getBid());
-        ((BookHolder) holder).bookName.setText(bookArrayList.get(position).getBname());
+        ((BookHolder) holder).bid.setText(bookArrayList.get(position).getBid());
+        ((BookHolder) holder).bname.setText(bookArrayList.get(position).getBname());
 
     }
 
@@ -39,13 +39,13 @@ public class BooksearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
     static class BookHolder extends RecyclerView.ViewHolder {
 
-        TextView bookName;
-        TextView bookID;
+        TextView bname;
+        TextView bid;
 
         public BookHolder(@NonNull View itemView) {
             super(itemView);
-            bookName = itemView.findViewById(R.id.book_name);
-            bookID = itemView.findViewById(R.id.book_id);
+            bname = itemView.findViewById(R.id.book_name);
+            bid = itemView.findViewById(R.id.book_id);
 
             itemView.setOnClickListener(view -> {
                 //TODO: Handle card clicks here, (eg: Launch activities from here)
